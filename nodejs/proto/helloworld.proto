@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package helloworld;
+option go_package = "core-server/proto";
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+  string age = 2;
+}
+
+message HelloReply {
+  string message = 1;
+  string age = 2;
+}
+
+service Calculate {
+  rpc Summary (SumRequest) returns (SumResponse) {}
+}
+
+message SumRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+message SumResponse {
+  int32 sum = 1;
+}
